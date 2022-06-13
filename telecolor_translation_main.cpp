@@ -24,6 +24,12 @@ void testPairToNumber(
     assert(pairNumber == expectedPairNumber);
 }
 
+void testPrintColorCodeReferenceManual()
+{
+    TelCoColorCoder::ColorPair *l_color{};
+    l_color->printColorCodeReferenceManual();
+}
+
 int main()
 {
     testNumberToPair(4, TelCoColorCoder::WHITE, TelCoColorCoder::BROWN);
@@ -31,6 +37,8 @@ int main()
 
     testPairToNumber(TelCoColorCoder::BLACK, TelCoColorCoder::ORANGE, 12);
     testPairToNumber(TelCoColorCoder::VIOLET, TelCoColorCoder::SLATE, 25);
+
+    testPrintColorCodeReferenceManual();
 
     return 0;
 }

@@ -1,4 +1,5 @@
 #include <string>
+#include <iostream>
 #include "telecolor_getter.h"
 
 namespace TelCoColorCoder
@@ -34,5 +35,25 @@ namespace TelCoColorCoder
     int ColorPair::GetPairNumberFromColor(MajorColor major, MinorColor minor)
     {
         return major * numberOfMinorColors + minor + 1;
+    }
+
+    void ColorPair::printColorCodeReferenceManual(void)
+    {
+        int majorColorIterator;
+        int minorColorIterator;
+        int pairNumber = 1;
+
+        std::cout << "25 PAIR COLOR CODE REFERNCE MANUAL" << std::endl;
+        std::cout << "----------------------------------------" << std::endl;
+        std::cout << "| PAIR NO. | MAJOR COLOR | MINOR COLOR |" << std::endl;
+        std::cout << "----------------------------------------" << std::endl;
+        for (majorColorIterator = 0; majorColorIterator < numberOfMajorColors; majorColorIterator++)
+        {
+            for (minorColorIterator = 0; minorColorIterator < numberOfMinorColors; minorColorIterator++)
+            {
+                std::cout << "|   " << pairNumber++ << " \t  -->  " << MajorColorNames[majorColorIterator] << "\t -->  " << MinorColorNames[minorColorIterator] << "\t |" << std::endl;
+            }
+            std::cout << "----------------------------------------" << std::endl;
+        }
     }
 }
