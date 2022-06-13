@@ -9,14 +9,10 @@ namespace TelCoColorCoder
     const char *MinorColorNames[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
     int numberOfMinorColors = sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
 
-    MajorColor ColorPair::getMajor()
-    {
-        return majorColor;
-    }
-    MinorColor ColorPair::getMinor()
-    {
-        return minorColor;
-    }
+    MajorColor ColorPair::getMajor() { return majorColor; }
+
+    MinorColor ColorPair::getMinor() { return minorColor; }
+
     std::string ColorPair::ToString()
     {
         std::string colorPairStr = MajorColorNames[majorColor];
@@ -32,6 +28,7 @@ namespace TelCoColorCoder
         MinorColor minorColor = (MinorColor)(zeroBasedPairNumber % numberOfMinorColors);
         return ColorPair(majorColor, minorColor);
     }
+
     int ColorPair::GetPairNumberFromColor(MajorColor major, MinorColor minor)
     {
         return major * numberOfMinorColors + minor + 1;
@@ -39,8 +36,7 @@ namespace TelCoColorCoder
 
     void ColorPair::printColorCodeReferenceManual(void)
     {
-        int majorColorIterator;
-        int minorColorIterator;
+        int majorColorIterator, minorColorIterator;
         int pairNumber = 1;
 
         std::cout << "25 PAIR COLOR CODE REFERNCE MANUAL" << std::endl;
