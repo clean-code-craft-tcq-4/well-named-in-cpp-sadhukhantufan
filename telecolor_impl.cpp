@@ -1,6 +1,6 @@
 #include <string>
 #include <iostream>
-#include "telecolor_getter.h"
+#include "telecolor_impl.h"
 
 namespace TelCoColorCoder
 {
